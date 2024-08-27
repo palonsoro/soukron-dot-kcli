@@ -14,11 +14,13 @@ parameters:
  oreg_url: 'registry.access.redhat.com/openshift3/ose-${component}:${version}'
  oreg_auth_user: ''
  oreg_auth_password: ''
+ ssh_keys: []
 
 {{ cluster_name }}-node:
  type: profile
  template: {{ rhel_template }}
  numcpus: 4
+ keys: {{ ssh_keys }}
  memory: 8192
  sharedkey: True
  domain: {{ domain }}
